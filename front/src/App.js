@@ -4,6 +4,7 @@ import { BeatLoader } from "react-spinners";
 
 const App = () => {
   const [file, setFile] = useState(null);
+  // eslint-disable-next-line no-unused-vars
   const [textFromPDF, setTextFromPDF] = useState("");
   const [coverLetter, setCoverLetter] = useState("");
   const [isGenerating, setIsGenerating] = useState(false);
@@ -26,7 +27,7 @@ const App = () => {
     try {
       const response = await axios.post("http://localhost:8000/api/extract/", formData);
       const { text_from_pdf, cover_letter } = response.data;
-      setTextFromPDF(text_from_pdf); // Set textFromPDF state
+      setTextFromPDF(text_from_pdf);
       setCoverLetter(cover_letter);
     } catch (error) {
       console.error("Error:", error);
